@@ -7,6 +7,7 @@ import Home from './component/Home.jsx'
 import Intro from './component/Intro.jsx'
 import Login from './auth/Login.jsx'
 import Signup from './auth/Signup.jsx'
+import Movieprovider from './ContextAPI/MovieAPI.jsx'
 
 const route = createBrowserRouter([
   {
@@ -30,6 +31,8 @@ const route = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Movieprovider>
     <RouterProvider router={route} />
+    </Movieprovider>
   </StrictMode>,
 )

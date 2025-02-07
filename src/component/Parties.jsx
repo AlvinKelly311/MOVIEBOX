@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {MovieAPI} from '../ContextAPI/MovieAPI.jsx';
 
 const Parties = () => {
+  const { movies, loading, error } = useContext(MovieAPI);
   return (
     <div>
         <div className='relative text-black p-8 flex flex-col gap-8'>
@@ -76,6 +78,26 @@ const Parties = () => {
           </div>
         </div>
       </div>
+
+    <section>
+        {/* movie */}
+   {loading && <p className="text-white text-center">Loading...</p>}
+        {error && <p className="text-red-400 text-center">{error}</p>}
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
+          {movies.length > 0 ? (
+          
+          movies.map((movie) => (
+            <div key={movie.imdbID} className="bg-gray-800 p-4 rounded-lg text-center h-70">
+              <img src={movie.Poster} alt={movie.Title} className="w-full h-44 object-cover rounded-lg" />
+              <h2 className="text-lg font-semibold mt-2">{movie.Title}</h2>
+              <p className="text-gray-400">{movie.Year}</p>
+            </div>
+          ))
+          ) : <p>no movie found</p>}
+        </div>
+    </section>
+  
     </div>
   )
 }
