@@ -1,12 +1,12 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Parties from './Parties';
-import Watch from './Watch';
+
 import { FaPlay } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <div className='flex flex-row-reverse justify-between relative top-16'>
+    <div className='flex flex-row-reverse justify-between relative top-16 bg-gray-600'>
      
       <div className='flex flex-col  relative w-full mr-15'>
         <div className='relative bg-black text-white p-8 rounded-lg flex flex-col w-full h-fit m-8 justify-between md:flex-row '>
@@ -32,9 +32,9 @@ const Home = () => {
 
         </div>
         <Parties />
-        <Watch />
+        
       </div>
-      <Sidebar />
+      {/* sidebar */}
     </div>
   )
 }

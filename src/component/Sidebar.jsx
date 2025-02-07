@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FaFilm, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 import { FiChrome, FiHeart, FiCalendar, FiWifiOff } from 'react-icons/fi';
-import g from '../assets/g.jpeg';
-import F1 from '../assets/f1.jpg';
-import fine from '../assets/fine.jpg';
-import too from '../assets/too.jpg';
-import bby from '../assets/bby.jpg';
-import race from '../assets/race.jpeg';
-import ek from '../assets/ek.jpeg';
+// import g from '../assets/g.jpeg';
+// import F1 from '../assets/f1.jpg';
+// import fine from '../assets/fine.jpg';
+// import too from '../assets/too.jpg';
+// import bby from '../assets/bby.jpg';
+// import race from '../assets/race.jpeg';
+// import ek from '../assets/ek.jpeg';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ const Sidebar = () => {
         </div>
         <div className='flex-grow p-5 space-y-5 text-gray-500 cursor-pointer'>
           <p className='text-xs'>Following</p>
-          <nav className='flex-grow p-5 space-x-4 flex flex-col items-center justify-center gap-7'>
+          {/* <nav className='flex-grow p-5 space-x-4 flex flex-col items-center justify-center gap-7'>
             {[{ img: g, name: "Elvis", online: false },
               { img: F1, name: "Simon", online: true },
               { img: fine, name: "Val", online: false },
@@ -61,7 +61,7 @@ const Sidebar = () => {
                 </div>
               </div>
             ))}
-          </nav>
+          </nav> */}
 
           <button className='p-5 flex items-center text-gray-400 hover:text-red-500 cursor-pointer relative right-4 mt-13 top-30'>
             <FaSignOutAlt className='mr-2' /> Log Out
