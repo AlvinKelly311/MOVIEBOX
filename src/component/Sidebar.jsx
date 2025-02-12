@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { FaFilm, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 import { FiChrome, FiHeart, FiCalendar, FiWifiOff } from 'react-icons/fi';
-// import g from '../assets/g.jpeg';
-// import F1 from '../assets/f1.jpg';
-// import fine from '../assets/fine.jpg';
-// import too from '../assets/too.jpg';
-// import bby from '../assets/bby.jpg';
-// import race from '../assets/race.jpeg';
-// import ek from '../assets/ek.jpeg';
+import { useNavigate } from 'react-router-dom'
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
+ 
       {/* Mobile Toggle Button */}
       <button
         className="md:hidden fixed top-4 left-4 z-50 text-white bg-gray-900 p-2 rounded"
@@ -39,31 +35,8 @@ const Sidebar = () => {
         </div>
         <div className='flex-grow p-5 space-y-5 text-gray-500 cursor-pointer'>
           <p className='text-xs'>Following</p>
-          {/* <nav className='flex-grow p-5 space-x-4 flex flex-col items-center justify-center gap-7'>
-            {[{ img: g, name: "Elvis", online: false },
-              { img: F1, name: "Simon", online: true },
-              { img: fine, name: "Val", online: false },
-              { img: too, name: "Alex", online: true },
-              { img: bby, name: "David", online: true },
-              { img: race, name: "Peter", online: true },
-              { img: ek, name: "Rendra", online: true }].map((user, index) => (
-              <div key={index} className='flex flex-row gap-15 items-center justify-center  relative right-8'>
-                <div className='flex flex-row gap-3 items-center justify-center'>
-                  <img src={user.img} alt="Profile" className='w-5.5 h-5.5 rounded-full object-cover' /> 
-                  <p>{user.name}</p>
-                </div>
-                <div className='relative'>
-                  {user.online ? (
-                    <div className="absolute top-0 right-0 w-2 h-2 bg-green-500 rounded-full" style={{ marginTop: -3, marginRight: 8 }} />
-                  ) : (
-                    <FiWifiOff size={15} />
-                  )}
-                </div>
-              </div>
-            ))}
-          </nav> */}
 
-          <button className='p-5 flex items-center text-gray-400 hover:text-red-500 cursor-pointer relative right-4 mt-13 top-30'>
+          <button onClick={() => navigate('/logout')} className='p-5 flex items-center text-gray-400 hover:text-red-500 cursor-pointer relative right-4 mt-13 top-30'>
             <FaSignOutAlt className='mr-2' /> Log Out
           </button>
         </div>
