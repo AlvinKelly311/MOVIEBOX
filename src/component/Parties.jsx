@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {MovieAPI} from '../ContextAPI/MovieAPI.jsx';
 
 const Parties = () => {
+  const { movies, loading, error } = useContext(MovieAPI);
   return (
     <div>
-        <div className='relative text-black p-8 flex flex-col gap-8'>
+        <div className='relative text-black p-9 flex flex-col gap-8'>
         <h3 className='text-red-600 font-extrabold text-2xl'>Parties</h3>
         <div className=' flex flex-col gap-10 justify-between md:flex-row '>
           <div className='flex flex-row gap-4 bg-gray-900 h-35 p-4 text-white rounded-lg md:flex-row'>
@@ -43,7 +45,7 @@ const Parties = () => {
             <div className='flex flex-col justify-between'>
                 <div>
                   <h3>Mortal Engines</h3>
-                  <p className='text-gray-500'>Science Fiction, Engines</p>
+                  <p className='text-gray-500'>Science Fiction</p>
                 </div>
                 <div>
                 <p className='text-gray-500 text-xs'>
@@ -76,6 +78,31 @@ const Parties = () => {
           </div>
         </div>
       </div>
+      
+      
+      <section>
+        {/* movie */}
+   {loading && <p className="text-white text-center">Loading...</p>}
+        {error && <p className="text-red-400 text-center">{error}</p>}
+
+        <div className="grid grid-row md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
+          {movies.length > 0 ? (
+          
+          movies.map((movie) => (
+            <button key={movie.imdbID} className='hover:bg-gray-500 p-5 rounded-lg text-center'>
+            <div className="bg-gray-800 p-4 rounded-lg text-center h-70">
+              <img src={movie.Poster} alt={movie.Title} className="w-full h-44 object-cover rounded-lg" />
+              <h2 className="text-lg font-semibold mt-2">{movie.Title}</h2>
+              <p className="text-gray-400">{movie.Year}</p>
+            </div>
+            </button>
+          ))
+          ) : <p>no movie found</p>}
+        </div>
+    </section>
+  
+      
+    
     </div>
   )
 }
