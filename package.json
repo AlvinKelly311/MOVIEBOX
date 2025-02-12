@@ -11,6 +11,12 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.48.1",
+<<<<<<< HEAD
+=======
+    "@tailwindcss/vite": "^4.0.3",
+    "axios": "^1.7.9",
+    "framer-motion": "^12.4.2",
+>>>>>>> f2eb78e (WIP: Save local changes before pulling)
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icon": "^1.0.0",

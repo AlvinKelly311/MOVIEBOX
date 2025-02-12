@@ -1,8 +1,15 @@
 import React, { useContext } from 'react'
 import {MovieAPI} from '../ContextAPI/MovieAPI.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const Parties = () => {
-  const { movies, loading, error } = useContext(MovieAPI);
+  const { movies, loading, error,handleMovielist } = useContext(MovieAPI);
+  const navigate = useNavigate()
+
+  const handledetail =(imdbID)=>{
+    handleMovielist(imdbID)
+    navigate('/moviedetails')
+  }
   return (
     <div>
         <div className='relative text-black p-9 flex flex-col gap-8'>
@@ -89,7 +96,7 @@ const Parties = () => {
           {movies.length > 0 ? (
           
           movies.map((movie) => (
-            <button key={movie.imdbID} className='hover:bg-gray-500 p-5 rounded-lg text-center'>
+            <button onClick={()=>handledetail(movie.imdbID)} key={movie.imdbID} className='hover:bg-gray-500 p-5 rounded-lg text-center'>
             <div className="bg-gray-800 p-4 rounded-lg text-center h-70">
               <img src={movie.Poster} alt={movie.Title} className="w-full h-44 object-cover rounded-lg" />
               <h2 className="text-lg font-semibold mt-2">{movie.Title}</h2>

@@ -9,6 +9,7 @@ import { FaPlay } from "react-icons/fa";
 const Home = () => {
   
   return (
+<<<<<<< HEAD
 return (
   <div className='flex flex-col mt-10'>
     <Navbar />
@@ -16,6 +17,15 @@ return (
       <Sidebar />
       <div className='flex flex-col relative w-full mr-15'>
         <div className='relative bg-black text-white p-8 rounded-lg flex flex-col w-full h-fit m-8 justify-between md:flex-row'>
+=======
+    <>
+    
+    <div className='flex flex-row-reverse justify-between relative top-16 bg-gray-600'>
+
+      <div className='flex flex-col  relative w-full mr-15'>
+        <div className='relative bg-black text-white p-8 rounded-lg flex flex-col w-full h-fit m-8 justify-between md:flex-row '>
+
+>>>>>>> f2eb78e (WIP: Save local changes before pulling)
           <div className='flex flex-col justify-center gap-12'>
             <div className='flex flex-col gap-4'>
               <h1 className="text-2xl font-bold">Arcane <br />  

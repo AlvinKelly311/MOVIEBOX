@@ -8,6 +8,7 @@ import Intro from './component/Intro.jsx'
 import Login from './auth/Login.jsx'
 import Signup from './auth/Signup.jsx'
 import Movieprovider from './ContextAPI/MovieAPI.jsx'
+import Moviedetail from './component/Moviedetail.jsx'
 
 const route = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const route = createBrowserRouter([
   {
     path:'/signup',
     element:<Signup />
+  },
+  {
+    path:'/moviedetails',
+    element:<Moviedetail />
   }
 
 ])
