@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import {MovieAPI} from '../ContextAPI/MovieAPI.jsx';
 import { useNavigate } from 'react-router-dom';
+import Loading from './Loading';
 
 const Parties = () => {
   const { movies, loading, error,handleMovielist } = useContext(MovieAPI);
@@ -87,26 +88,39 @@ const Parties = () => {
       </div>
       
       
-      <section>
-        {/* movie */}
-   {loading && <p className="text-white text-center">Loading...</p>}
-        {error && <p className="text-red-400 text-center">{error}</p>}
+      <section className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
+  {/* Loading & Error Messages */}
+  {loading && <Loading />}
+  {error && <p className="text-red-400 text-center">{error}</p>}
 
-        <div className="grid grid-row md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
-          {movies.length > 0 ? (
-          
-          movies.map((movie) => (
-            <button onClick={()=>handledetail(movie.imdbID)} key={movie.imdbID} className='hover:bg-gray-500 p-5 rounded-lg text-center'>
-            <div className="bg-gray-800 p-4 rounded-lg text-center h-70">
-              <img src={movie.Poster} alt={movie.Title} className="w-full h-44 object-cover rounded-lg" />
-              <h2 className="text-lg font-semibold mt-2">{movie.Title}</h2>
-              <p className="text-gray-400">{movie.Year}</p>
-            </div>
-            </button>
-          ))
-          ) : <p>no movie found</p>}
-        </div>
-    </section>
+  {/* Movie Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    {movies.map((movie) => (
+      <button 
+        onClick={() => handledetail(movie.imdbID)} 
+        key={movie.imdbID} 
+        className="hover:bg-gray-700 transition duration-300 p-4 rounded-lg text-center"
+      >
+       <div className="bg-gray-800 p-4 rounded-lg shadow-lg ">
+  {/* Movie Poster */}
+  <img 
+    src={movie.Poster} 
+    alt={movie.Title} 
+    className="w-full h-2/3 object-cover rounded-lg"
+  />
+  
+  {/* Movie Details */}
+  <div className="w-full h-1/3 text-center">
+    <h3 className="text-sm font-semibold text-white">{movie.Title}</h3>
+    <p className="text-gray-400 text-sm">{movie.Year}</p>
+  </div>
+</div>
+
+      </button>
+    ))}
+  </div>
+</section>
+
   
       
     

@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { MovieAPI } from '../ContextAPI/MovieAPI';
 
 const Searchbar = () => {
+  const {handleSearch} = useContext(MovieAPI)
+  const [search, setSearch] = useState("");
+
+  const HandleSearch = (e) => {
+    const Value = e.target.value;
+    setSearch(Value);
+    handleSearch(Value);
+  }
   return (
     <div className='flex relative flex-col'> 
 
@@ -12,11 +21,11 @@ const Searchbar = () => {
 
                 placeholder='Search'
 
-                value={Searchbar}
+                value={search}
 
-                // onChange={handleSearch}
+                onChange={HandleSearch}
 
-                className='p-3 rounded-bl-[0.5rem] rounded-tr-[0.5rem] border-[1.2px] border-current bg-gray-100 pl-10 w-full' // Added padding for the icon
+                className='p-3 rounded-bl-[0.5rem] rounded-tr-[0.5rem] border-[1.2px] border-current bg-gray-100 pl-10 w-full text-black' // Added padding for the icon
 
             />
 
