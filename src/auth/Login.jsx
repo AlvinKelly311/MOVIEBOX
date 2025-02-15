@@ -29,7 +29,7 @@ const Login = () => {
 
         {/* Header */}
         <div className="relative z-10 text-white p-5 w-full text-center md:text-left">
-          <h1 className="text-2xl font-bold flex items-center justify-center md:justify-start">
+          <h1 className="text-2xl font-bold flex items-center justify-center ">
             <FaFilm className="mr-2 text-red-500 font-extrabold" /> Apex.STUDIO
           </h1>
         </div>
