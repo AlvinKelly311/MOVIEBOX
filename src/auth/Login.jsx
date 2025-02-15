@@ -59,7 +59,7 @@ const Login = () => {
               </button>
             </form>
             {message && <p className="mt-4 text-white">{message}</p>}
-            <Link to="/" className="block mt-4 text-white underline">
+            <Link to="/signup" className="block mt-4 text-white underline">
               Don't have an account? Sign up
             </Link>
           </div> 

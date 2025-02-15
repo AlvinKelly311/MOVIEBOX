@@ -10,6 +10,7 @@ import Signup from './auth/Signup.jsx'
 import Movieprovider from './ContextAPI/MovieAPI.jsx'
 import Moviedetail from './component/Moviedetail.jsx'
 
+
 const route = createBrowserRouter([
   {
     path:'/',

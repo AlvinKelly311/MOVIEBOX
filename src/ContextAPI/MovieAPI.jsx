@@ -10,12 +10,7 @@ const MovieProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [selectedMovie, setSelectedMovie] = useState(null);
 
-    const [watchlist, setWatchlist] = useState(() => {
-        const stored = localStorage.getItem("watchlist");
-        const parsed = stored ? JSON.parse(stored) : [];
-        // Filter out null or undefined values
-        return parsed.filter(movie => movie && movie.imdbID);
-    });
+  
 
     const APIKEY = "26f0e5e";
     const BASE_URL = "https://www.omdbapi.com/";
@@ -116,7 +111,7 @@ const MovieProvider = ({ children }) => {
     };
 
     return (
-        <MovieAPI.Provider value={{ movies, error, loading, handleSearch, handleMovielist, selectedMovie, watchlist, addToWatchlist, removeFromWatchlist }}>
+        <MovieAPI.Provider value={{ movies, error, loading, handleSearch, handleMovielist, selectedMovie }}>
             {children}
         </MovieAPI.Provider>
     );
