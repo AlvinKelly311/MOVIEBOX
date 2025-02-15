@@ -14,7 +14,7 @@ const Parties = () => {
   return (
     <div>
         <div className='relative text-black p-9 flex flex-col gap-8'>
-        <h3 className='text-red-600 font-extrabold text-2xl'>Parties</h3>
+        <h3 className='text-red-600 font-extrabold text-2xl'>COMING SOON</h3>
         <div className=' flex flex-col gap-10 justify-between md:flex-row '>
           <div className='flex flex-row gap-4 bg-gray-900 h-35 p-4 text-white rounded-lg md:flex-row'>
             <img src="https://cdn.marvel.com/content/1x/snh_online_6072x9000_posed_01.jpg" alt="Spiderman"  className='w-18 h-fit'/>
@@ -89,6 +89,8 @@ const Parties = () => {
       
       
       <section className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
+      <h3 className='text-red-600 font-extrabold text-2xl'>Treanding Movies</h3>
+        
   {/* Loading & Error Messages */}
   {loading && <Loading />}
   {error && <p className="text-red-400 text-center">{error}</p>}
