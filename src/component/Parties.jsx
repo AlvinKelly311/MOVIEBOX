@@ -48,7 +48,7 @@ const Parties = () => {
             
           </div>
 
-          <div className='flex flex-row gap-4 bg-gray-900 h-35 p-4 text-white rounded-lg md:flex-row'>
+          <div className='flex flex-row gap-4 bg-gray-900 h-1/2 p-4 text-white rounded-lg md:flex-row'>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvOSmAJ70SPaOcElmRpN4LCu4SCEXNfwqktQ&s" alt="Mortal Engines" className='w-18 h-fit'/>
             <div className='flex flex-col justify-between'>
                 <div>
@@ -88,7 +88,7 @@ const Parties = () => {
       </div>
       
       
-      <section className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
+      <section className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8 ">
       <h3 className='text-red-600 font-extrabold text-2xl'>Treanding Movies</h3>
         
   {/* Loading & Error Messages */}
@@ -96,7 +96,7 @@ const Parties = () => {
   {error && <p className="text-red-400 text-center">{error}</p>}
 
   {/* Movie Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-[3rem]">
     {movies.map((movie) => (
       <button 
         onClick={() => handledetail(movie.imdbID)} 

@@ -8,7 +8,7 @@ const Navbar = () => {
             fixed top-0 z-50 shadow-md'>
             
             {/* Left Section - Searchbar */}
-            <div className='flex-1 min-w-[200px]'>
+            <div className='flex-1 min-w-[150px] ml-[2.6rem]'>
                 <Searchbar />
             </div>
 
